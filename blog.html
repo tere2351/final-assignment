@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Final Assignment</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;400&display=swap" rel="stylesheet">
+  <style>
+    #navbar {
+      font-family: Fira Sans;
+      font-weight: 100;
+      font-size: 20px;
+    }
+
+    #web-body {
+      font-family: Fira Sans;
+      font-weight: 100;
+    }
+
+    #footer {
+      background-color: white;
+      color: black;
+      font-family: Fira Sans;
+      font-weight: 100;
+      font-size: 13px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: left;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      color: olive;
+    }
+
+    .nav-link.active {
+      font-weight: 400;
+    }
+
+    .caption-text {
+      font-size: 12px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .btn {
+      font-family: Fira Sans;
+      font-weight: 100;
+      color: black;
+      background-color: white;
+      border-color: lightgray;
+      border-width: 0.5px;
+      justify-content: center;
+      margin-inline: 5px;
+    }
+
+    .btn.btn-primary:active {
+      color: white;
+      background-color: lightgrey;
+      border-color: lightgrey;
+    }
+
+    .btn:hover {
+      color: white;
+      background-color: grey;
+      border-color: grey;
+    }
+
+    h1 {
+      color: black;
+      font-family: Fira Sans;
+      font-size: 36px;
+      font-weight: 100;
+      text-align: center;
+      margin-left: 0;
+      margin-block-start: 0;
+    }
+
+    #buttonscontainer {
+      justify-content: center;
+      display: flex;
+    }
+
+    .card {
+      display: inline-block;
+      margin-top: 20px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar" class="container-lg">
+    <nav class="navbar navbar-expand-lg bg-body-primary">
+      <div class="container-fluid pt-2">
+        <a class="navbar-brand" href="index.html">
+          <img src="Pictures/logo.png" alt="moonday logo" width="150">
+        </a>
+      </div>
+      <div class="container pt-4 pb-4" style="justify-content: right;">
+        <a class="navbar-brand" href="#" style="text-align:right"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="text-align:right"></span>
+        </button>
+        <div class="collapse navbar-collapse container-fluid" id="navbarNavAltMarkup">
+          <div class="navbar-nav container-lg" style="justify-content:right">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="contact us.html">Contact Us</a>
+            <a class="nav-link" href="about us.html">About Us</a>
+            <a class="nav-link" href="portfolio.html">Portfolio</a>
+            <a class="nav-link active" aria-current="page" href="blog.html">Blog</a>
+            <a class="nav-link" href="to-do.html">To-dos</a>
+          </div>
+        </div>
+      </div>
+  </div>
+  </nav>
+  </div>
+  <div class="container">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username"
+        aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button"><img src="search icon.png"
+            style="height:22px;"></button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div>
+        <h1 class="display-4 pt-3">A place for our thoughts, fears, finds, fads, obsessions & opinions</h4>
+      </div>
+      <div class="position-relative" id="buttonscontainer">
+        <button type="button" class="btn btn-primary">All</button>
+        <button type="button" class="btn btn-primary">Insights</button>
+        <button type="button" class="btn btn-primary">News</button>
+        <button type="button" class="btn btn-primary">Promotions</button>
+      </div>
+      <div class="grid text-center">
+        <div class="row">
+          <div class="col-6 col-md-4">
+            <div class="card">
+              <img src="Pictures/blogimg1.jpeg" style="height:280px;" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-body-secondary text-start">16 Dec 2022</h6>
+                <p class="card-text text-start">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link text-start">News</a>
+              </div>
+            </div>
+          </div>
+            <div class="col-6 col-md-4">
+              <div class="card">
+                <img src="Pictures/blogimg3.jpeg" style="height:280px;" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-body-secondary text-start">16 Nov 2022</h6>
+                  <p class="card-text text-start">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Insights</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-4">
+              <div class="card">
+                <img src="Pictures/blogimg2.jpeg" style="height:280px;" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-body-secondary text-start">16 Oct 2022</h6>
+                  <p class="card-text text-start">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">News</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-6 col-md-4">
+          <div class="card">
+            <img src="Pictures/blogimg1.jpeg" style="height:280px;" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-body-secondary text-start">16 Dec 2022</h6>
+              <p class="card-text text-start">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link text-start">News</a>
+            </div>
+          </div>
+        </div>
+          <div class="col-6 col-md-4">
+            <div class="card">
+              <img src="Pictures/blogimg3.jpeg" style="height:280px;" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-body-secondary text-start">16 Nov 2022</h6>
+                <p class="card-text text-start">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Insights</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="card">
+              <img src="Pictures/blogimg2.jpeg" style="height:280px;" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-body-secondary text-start">16 Oct 2022</h6>
+                <p class="card-text text-start">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">News</a>
+              </div>
+            </div>
+          </div>
+
+
+    </div>
+    <div id="footer">
+      <div class="container-lg text-center">
+        <div class="row">
+          <div class="col" style="text-align:left">
+            <a class="social-logo" href="https://www.instagram.com/moonandday_/"><img src="Pictures/instagramlogo.png"
+                width="20px" height="20px"></a>
+            <a class="social-logo" href="https://shopee.co.id/moonandday_" style="margin-left:10px;">
+              <img src="Pictures/shopeelogo.png" width="20px" height="20px">
+            </a>
+          </div>
+          <div class="col" style="text-align:right;padding-top:0px;">
+            <a>a web project by TCS.<a>
+          </div>
+        </div>
+      </div>
+      <script>
+        (() => {
+          'use strict'
+
+          const forms = document.querySelectorAll('.needs-validation')
+
+          Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+
+              form.classList.add('was-validated')
+            }, false)
+          })
+        })()
+
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
+
+        </script>
+</body>

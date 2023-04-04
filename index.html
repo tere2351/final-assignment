@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Final Assignment</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;400&display=swap" rel="stylesheet">
+  <style>
+    #navbar {
+      background-color:white;
+      font-family: Fira Sans;
+      font-weight: 100;
+      font-size: 20px;
+      /* position:sticky;
+      top:0;
+      z-index:100; */
+    }
+
+    #footer {
+      background-color: white;
+      color: black;
+      font-family: Fira Sans;
+      font-weight: 100;
+      font-size: 13px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      text-align: left;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      color: olive;
+    }
+
+    .nav-link.active {
+      font-weight: 400;
+    }
+
+    li.active:hover,li:hover {
+      color: olive;
+    }
+
+    #filters {
+      list-style: none;
+      list-style-type: none;
+      overflow: hidden;
+    }
+
+    li {
+      display: inline;
+      text-decoration: none;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: Fira Sans;
+      font-weight: 100;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      line-height: 1em;
+      height: 50px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    ul li.active {
+      color: olive;
+    }
+
+    .img-container {
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 315px;
+      width: 315px;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: white;
+    }
+
+    .img-container:hover .overlay {
+      opacity: 75%;
+    }
+
+    .overlay-text {
+      color: black;
+      font-size: 40px;
+      font-family: Fira Sans;
+      font-weight: 100;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      /* -webkit-transform: translate(-50%, -50%); */
+      /* -ms-transform: translate(-50%, -50%); */
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .btn {
+      font-family: Fira Sans;
+      font-weight: 100;
+      width: 50%;
+      color: black;
+      background-color: white;
+      border-color: black;
+      border-width: 0.5px;
+    }
+
+    .btn.btn-primary:active {
+      color: white;
+      background-color: grey;
+      border-color: grey;
+    }
+
+    .btn:hover {
+      color: white;
+      background-color: grey;
+      border-color: grey;
+    }
+
+    .modal-dialog {
+      font-family: Fira Sans;
+      font-weight: 100;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar" class="container-lg">
+    <nav class="navbar navbar-expand-lg bg-body-primary">
+      <div class="container-fluid pt-2">
+        <a class="navbar-brand" href="index.html">
+          <img src="Pictures/logo.png" alt="moonday logo" width="150">
+        </a>
+      </div>
+      <div class="container pt-4 pb-4" style="justify-content: right;">
+        <a class="navbar-brand" href="#" style="text-align:right"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="text-align:right"></span>
+        </button>
+        <div class="collapse navbar-collapse container-fluid" id="navbarNavAltMarkup">
+          <div class="navbar-nav container-lg" style="justify-content:right">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link" href="contact us.html">Contact Us</a>
+            <a class="nav-link" href="about us.html">About Us</a>
+            <a class="nav-link" href="portfolio.html">Portfolio</a>
+            <a class="nav-link" href="blog.html">Blog</a>
+            <a class="nav-link" href="to-do.html">To-dos</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div id="web-body">
+    <div class="container-lg pt-5">
+      <div class="filterWrapper container-fluid" style="text-align:right;">
+        <ul id="filters" class="clearfix">
+          <li class="filter active" onclick="showImage('All')">All</li>
+          <li class="filter" onclick="showImage('kitchen')">Kitchen</li>
+          <li class="filter" onclick="showImage('bedroom')">Bedroom</li>
+          <li class="filter">Dining</li>
+          <li class="filter">Bath</li>
+        </ul>
+      </div>
+      <!-- images box -->
+      <div class="container" id="imagebox">
+
+
+        <!-- button ORDER NOW -->
+      </div>
+      <div class="row justify-content-md-center">
+      <button type="button" style="margin-top:35px;" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+        data-bs-target="#small-dialog">Order Now</button>
+      </div>
+      <!-- dialog box for table prices -->
+      <div class="modal fade" id="small-dialog" tabindex="-1" aria-labelledby="small-dialog-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Features</th>
+                    <th scope="col">Standard</th>
+                    <th scope="col">Premium</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Space</td>
+                    <td>0-50sqm</td>
+                    <td>>50sqm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Free Consultation</th>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Installation</th>
+                    <td>Additional Fee</td>
+                    <td>Free</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td> </td>
+                    <td class="order-now"><button type="button" class="btn btn-secondary"
+                        style="width:auto">Inquire</button></td>
+                    <td class="order-now"><button type="button" class="btn btn-secondary"
+                        style="width:auto">Inquire</button></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="container-lg text-center">
+          <div class="row">
+            <div class="col" style="text-align:left">
+              <a class="social-logo" href="https://www.instagram.com/moonandday_/"><img src="Pictures/instagramlogo.png"
+                  width="20px" height="20px"></a>
+              <a class="social-logo" href="https://shopee.co.id/moonandday_" style="margin-left:10px;">
+                <img src="Pictures/shopeelogo.png" width="20px" height="20px">
+              </a>
+            </div>
+            <div class="col" style="text-align:right;padding-top:0px;">
+              <a>a web project by TCS.<a>
+            </div>
+          </div>
+        </div>
+        <script>
+          const liItem = document.querySelectorAll('ul li');
+          const imgItem = document.querySelectorAll('.row img');
+
+          liItem.forEach(li => {
+            li.onclick = function () {
+              // make active
+              liItem.forEach(li => {
+                li.className = "filter";
+              })
+              li.className = "filter active";
+              showImage(li.innerText.toLowerCase());
+            }
+          })
+
+          let imagesAll = [{ img: "Pictures/diningroom4.jpeg", cat:"dining", text: "Loren Ipsum Project" }, { img: "Pictures/diningroom1.jpeg", cat:"dining", text: "Loren Ipsum Project" },
+          { img: "Pictures/kitchen1.png", cat:"kitchen", text: "Loren Ipsum Project" }, { img: "Pictures/diningroom4.jpeg", cat:"dining", text: "Loren Ipsum Project" }, { img: "Pictures/diningroom4.jpeg", cat:"dining", text: "Loren Ipsum Project" },
+          { img: "Pictures/diningroom4.jpeg", cat:"dining", text: "Loren Ipsum Project" },{ img: "Pictures/diningroom3.jpeg", cat:"bedroom", text: "Loren Ipsum Project" },
+          { img: "Pictures/diningroom2.jpeg", cat:"bath", text: "Loren Ipsum Project" }]
+          function showImage(cat) {
+            var imagebox = document.getElementById("imagebox");
+            let rowStart = "<div class='row pt-2'>"
+            let counter = 0  
+            for (let i = 0; i < imagesAll.length; i++) {
+              const img = imagesAll[i];
+              if (img.cat == cat || cat == "all") {
+                counter++
+                rowStart += `<div class="img-container col-sm pt-2" data-filter="${img.cat}"><img
+              src="${img.img}"
+              style="object-fit:cover;"
+              width="300px;"
+              height="300px;"><div class="overlay">
+                <div class="overlay-text">${img.text}</div>
+              </div></div>`
+              }
+              if (counter === 4) {
+                rowStart += "</div>"
+                rowStart += "<div class='row pt-3'>"
+              } console.log(counter)
+            } rowStart += "</div>"
+            imagebox.innerHTML = rowStart;
+          } showImage("all")
+
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
+
+          </script>
+</body>
